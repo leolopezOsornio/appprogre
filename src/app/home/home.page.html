@@ -1,0 +1,20 @@
+
+<ion-content [fullscreen]="true">
+
+  
+  <ion-card id="login-container">
+    <ion-card-header>
+      <ion-card-title class="title">Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-input class="custom-input" type="text" placeholder="Username" [(ngModel)]="username" (input)="validateFields()"></ion-input>
+      <ion-input class="custom-input" type="password" placeholder="Password" [(ngModel)]="password" (input)="validateFields()"></ion-input>
+  
+      <ion-button expand="full" [disabled]="!isValid" (click)="showModal()">Ingresar</ion-button>
+      <ion-button expand="full" fill="clear" (click)="goToRegister()" class="register-btn">Regístrate</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  
+</ion-content>
