@@ -1,8 +1,11 @@
-
 <ion-content [fullscreen]="true">
+  <div class="spinner-init" *ngIf="showLoading">
+    <img class="logo" src="assets/logo (2).jpg" alt="Logo">
+    <div class="loading-bar"></div>
+  </div>
 
-  
-  <ion-card id="login-container">
+  <!-- Contenido del Login -->
+  <ion-card id="login-container" *ngIf="!showLoading">
     <ion-card-header>
       <ion-card-title class="title">Iniciar Sesión</ion-card-title>
     </ion-card-header>
@@ -15,6 +18,9 @@
       <ion-button expand="full" fill="clear" (click)="goToRegister()" class="register-btn">Regístrate</ion-button>
     </ion-card-content>
   </ion-card>
-  
-  
+  <!-- Segundo Spinner: Spinner que aparece al hacer clic en "Ingresar" -->
+  <div class="spinner-login" *ngIf="showLoginSpinner">
+    <ion-spinner name="dots" color="primary"></ion-spinner>
+  </div>
 </ion-content>
+  <!-- author: Leonardo López Osornio -->
